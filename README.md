@@ -1,2 +1,0 @@
-# GestureSense
-Gesture Engine
