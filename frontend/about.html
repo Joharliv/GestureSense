@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — GestureSense</title>
+  <meta name="description" content="GestureSense turns gestures into conversations with AI-powered recognition and real-time speech." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+  <div class="particles" id="particles"></div>
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="logo__dot"></span> GestureSense</a>
+    <div class="nav__links">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn--pill">Get in touch</a>
+    <button class="nav__burger" aria-label="Menu">☰</button>
+  </nav>
+  <!-- HERO -->
+  <header class="page-hero reveal">
+    <span class="chip"><span class="chip__pulse"></span> About us</span>
+    <h1 class="page-hero__title">About <span class="grad">GestureSense</span></h1>
+    <p class="page-hero__sub">Turning gestures into conversations with the power of AI.</p>
+  </header>
+  <!-- MISSION -->
+  <section class="section">
+    <div class="glass reveal">
+      <span class="eyebrow">Our mission</span>
+      <h2>Break the silence between intent and understanding.</h2>
+      <p class="lead">GestureSense helps break communication barriers using AI-powered gesture recognition and real-time speech generation — so anyone, anywhere, can be heard.</p>
+    </div>
+  </section>
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="section__head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>From a hand in the air to a sentence spoken aloud.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step__num">01 / Detect</span><h3>Webcam-based capture</h3><p>Your camera streams frames straight into the on-device pipeline — no cloud round-trip.</p></div>
+      <div class="step reveal"><span class="step__num">02 / Predict</span><h3>AI gesture prediction</h3><p>A trained model classifies static and motion gestures frame by frame.</p></div>
+      <div class="step reveal"><span class="step__num">03 / Build</span><h3>Sentence building</h3><p>Smart suggestions stitch gestures into natural, grammatical sentences.</p></div>
+      <div class="step reveal"><span class="step__num">04 / Speak</span><h3>Text-to-speech</h3><p>The sentence is spoken aloud in real time with a clear, expressive voice.</p></div>
+    </div>
+    <div class="tech-row reveal">
+      <span class="tech-chip">MediaPipe</span>
+      <span class="tech-chip">TensorFlow</span>
+      <span class="tech-chip">OpenCV</span>
+      <span class="tech-chip">Flask</span>
+    </div>
+  </section>
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section__head reveal">
+      <span class="eyebrow">Features</span>
+      <h2>Built for real conversations.</h2>
+    </div>
+    <div class="glow-grid">
+      <div class="glow-card reveal"><div class="glow-card__icon">⚡</div><h3>Real-time recognition</h3><p>Sub-second response from gesture to text.</p></div>
+      <div class="glow-card reveal"><div class="glow-card__icon">🖐</div><h3>Motion + static</h3><p>Handles still signs and dynamic motion gestures alike.</p></div>
+      <div class="glow-card reveal"><div class="glow-card__icon">✨</div><h3>Smart suggestions</h3><p>Context-aware sentence building that finishes your thought.</p></div>
+      <div class="glow-card reveal"><div class="glow-card__icon">🔊</div><h3>Live speech output</h3><p>Natural TTS so the room hears you instantly.</p></div>
+      <div class="glow-card reveal"><div class="glow-card__icon">🛡</div><h3>Privacy-first AI</h3><p>Processing stays on-device whenever possible.</p></div>
+      <div class="glow-card reveal"><div class="glow-card__icon">♿</div><h3>Accessibility focused</h3><p>Designed with and for the deaf and non-verbal community.</p></div>
+    </div>
+  </section>
+  <!-- WHY IT MATTERS -->
+  <section class="section">
+    <div class="section__head reveal">
+      <span class="eyebrow">Why it matters</span>
+      <h2>Communication should never be a barrier.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><h3>Classrooms</h3><p>Students participate in discussions without waiting for an interpreter.</p></div>
+      <div class="why-card reveal"><h3>Hospitals</h3><p>Patients explain symptoms and consent clearly under pressure.</p></div>
+      <div class="why-card reveal"><h3>Online meetings</h3><p>Signers join Zoom and Meet with their voice ready in the room.</p></div>
+      <div class="why-card reveal"><h3>Public spaces</h3><p>Order coffee, ask directions, run errands — independently.</p></div>
+    </div>
+  </section>
+  <!-- VISION -->
+  <section class="cta">
+    <div class="cta__inner reveal">
+      <span class="eyebrow">Our vision</span>
+      <h2>A future where AI understands human gestures as naturally as spoken language.</h2>
+      <p>We're just getting started. Join us on the road there.</p>
+      <a href="contact.html" class="btn btn--primary">Get involved →</a>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <a href="index.html" class="logo"><span class="logo__dot"></span> GestureSense</a>
+        <p>Gesture-to-speech, powered by AI. Made with care for accessibility.</p>
+      </div>
+      <div class="footer__links">
+        <a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 GestureSense</span><span>Built with ♥ for accessibility</span></div>
+  </footer>
+  <script src="script1.js"></script>
+  <script src="pages.js"></script>
+</body>
+</html>

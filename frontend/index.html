@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GestureSense — Speak with your hands. We'll do the talking.</title>
+  <meta name="description" content="GestureSense is the AI-powered gesture translator that turns sign language and hand movements into real-time speech and text. Built for the way you actually communicate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#" class="logo">
+      <span class="logo__dot"></span>
+      <span>GestureSense</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#vibe">The vibe</a>
+    </nav>
+    <a href="home.html" class="btn btn--pill">Try it free →</a>
+    <button class="nav__burger" aria-label="Menu">☰</button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__copy">
+        <span class="chip">
+          <span class="chip__pulse"></span>
+          Live · v2 neural engine
+        </span>
+        <h1 class="hero__title">
+          Your hands<br />
+          have a lot to say.<br />
+          <span class="grad">We translate.</span>
+        </h1>
+        <p class="hero__sub">
+          GestureSense is an AI that turns sign language and everyday hand
+          gestures into real-time speech &amp; captions. No gloves. No lag.
+          Just vibes that finally get understood.
+        </p>
+        <div class="hero__cta">
+          <a href="home.html" class="btn btn--primary">Start your journey</a>
+          <a href="#how" class="btn btn--ghost">Demo</a>
+        </div>
+        <div class="hero__meta">
+          <div><strong>99.4%</strong><span>accuracy</span></div>
+          <div><strong>40+</strong><span>sign dialects</span></div>
+          <div><strong>&lt;15ms</strong><span>on-device</span></div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__frame">
+          <img src="hero.jpg" alt="A person mid-gesture with neon purple light trails tracing their hands and floating translation captions" />
+          <div class="hero__caption">
+            <span class="hero__caption-label">translating · ASL → EN</span>
+            <span class="hero__caption-text" id="ticker">"hello, nice to meet you"</span>
+          </div>
+          <span class="badge badge--tl">● rec</span>
+          <span class="badge badge--br">conf. 99%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>say it loud ✦</span><span>without saying it ✦</span>
+        <span>real-time ✦</span><span>on-device ✦</span>
+        <span>built for the deaf community ✦</span><span>powered by AI ✦</span>
+        <span>say it loud ✦</span><span>without saying it ✦</span>
+        <span>real-time ✦</span><span>on-device ✦</span>
+        <span>built for the deaf community ✦</span><span>powered by AI ✦</span>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section" id="how">
+      <div class="section__head">
+        <span class="eyebrow">/ how it works</span>
+        <h2>Three steps. Zero awkward pauses.</h2>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step__num">01</span>
+          <h3>Choose your gesture mode</h3>
+          <p>Select static gestures, motion gestures, or sentence builder mode. GestureSense adapts instantly to how you
+            communicate.</p>
+        </article>
+        
+        <article class="step reveal">
+          <span class="step__num">02</span>
+          <h3>AI detects and predicts</h3>
+          <p>Using real-time hand tracking and deep learning, the system recognizes your gestures, predicts words, and suggests
+            meaningful sentences.</p>
+        </article>
+        
+        <article class="step reveal">
+          <span class="step__num">03</span>
+          <h3>Communicate naturally</h3>
+          <p>Your gestures are transformed into live text and speech, helping you communicate smoothly during meetings, calls,
+            and conversations.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="section__head">
+        <span class="eyebrow">/ what you get</span>
+        <h2>Features that hit different.</h2>
+        </div>
+        <div class="features">
+          <article class="feature feature--lg reveal">
+            <div class="feature__icon">⚡</div>
+            <h3>Real-time, like actually real-time</h3>
+            <p>Under 15ms between gesture and voice. Your conversation flows; no one's waiting on a buffering bar.</p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">🖐️</div>
+            <h3>Understands every movement</h3>
+            <p>From simple hand signs to complex motion gestures, the AI captures every detail like it’s reading a second
+              language.</p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">🧠</div>
+            <h3>AI that finishes your thoughts</h3>
+            <p>Smart sentence suggestions turn single predictions into complete conversations — faster, smoother, and more
+              natural.</p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">🔊</div>
+            <h3>Your gestures get a voice</h3>
+            <p>Watch silent hand movements transform instantly into spoken words that everyone around you can understand.</p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">🎥</div>
+            <h3>Just open your camera</h3>
+            <p>No gloves. No sensors. No complicated setup. Your webcam is all GestureSense needs to start understanding you.
+            </p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">🌍</div>
+            <h3>Built to break communication barriers</h3>
+            <p>GestureSense helps people connect beyond language and speech, making conversations more inclusive for everyone.
+            </p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">🔒</div>
+            <h3>Your privacy stays yours</h3>
+            <p>Your camera feed never leaves your device, so your conversations stay personal, private, and secure.</p>
+          </article>
+        
+          <article class="feature reveal">
+            <div class="feature__icon">{ }</div>
+            <h3>Ready for the future</h3>
+            <p>From video calls to smart classrooms, GestureSense is built to plug into the next generation of accessible
+              technology.</p>
+          </article>
+          </div>
+          </section>
+          
+          <!-- VIBE / use cases -->
+          <section class="section vibe" id="vibe">
+            <div class="section__head">
+              <span class="eyebrow">/ the vibe</span>
+              <h2>Built for everywhere<br />you actually live.</h2>
+            </div>
+            <div class="vibe__grid">
+              <div class="card card--a reveal">
+                <span class="card__tag">classroom</span>
+                <p>"Finally took notes in lecture without missing a single beat."</p>
+              </div>
+              <div class="card card--b reveal">
+                <span class="card__tag">coffee shop</span>
+                <p>Order a oat-milk-half-sweet-iced-matcha without typing it out.</p>
+              </div>
+              <div class="card card--c reveal">
+                <span class="card__tag">video calls</span>
+                <p>Live captions of your signing, in your voice, in everyone's language.</p>
+              </div>
+              <div class="card card--d reveal">
+                <span class="card__tag">doctor's office</span>
+                <p>Talk to your doctor without waiting hours for an interpreter.</p>
+              </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+      <div class="cta__inner">
+        <h2>Stop translating yourself.<br />Let AI do it.</h2>
+        <p>Experience GestureSense in action and see how AI transforms gestures into real conversations</p>
+        <a href="home.html" class="btn btn--primary">
+          Get Started
+        </a>
+        <span class="cta__small"> fast · smart · accessible</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="#" class="logo">
+        <span class="logo__dot"></span>
+        <span>GestureSense</span>
+      </a>
+      <p>Bridging hands and voices with on-device AI. Made for everyone who's ever been talked over.</p>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 GestureSense Labs</span>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script1.js"></script>
+</body>
+</html>
