@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 
 from flask_cors import CORS
-
+import os
 import base64
 import cv2
 import numpy as np
@@ -296,11 +296,7 @@ def choose_suggestion():
 
 if __name__ == "__main__":
 
-    app.run(
-
-        host="0.0.0.0",
-
-        port=5000,
-
-        debug=False
-    )
+   app.run(
+    host="0.0.0.0",
+    port=int(os.environ.get("PORT", 5000))
+)
