@@ -249,7 +249,7 @@ async function sendFrame(){
         const response =
             await fetch(
 
-                `https://gesturesense-kfhq.onrender.com/predict/${currentMode}`,
+                `https://gesturesense-p6qu.onrender.com/predict/${currentMode}`,
 
                 {
 
