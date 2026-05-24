@@ -3,33 +3,33 @@ import pandas as pd
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 import pickle
-
+print("basics imported", flush=True)
 # ======================================
 # MODEL PATH
 # ======================================
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
+print("base dir created", flush=True)
 model_path = os.path.join(BASE_DIR, "model.pkl")
-
+print("model path:", model_path, flush=True)
 
 # ======================================
 # LOAD MODEL
 # ======================================
-
+print("loading model...", flush=True)
 with open(model_path, "rb") as f:
     model, columns = pickle.load(f)
-
+print("model loaded", flush=True)
 # ======================================
 # HAND DETECTOR
 # ======================================
-
+print("creating detector...", flush=True)
 
 detector = HandDetector(
     maxHands=1,
     detectionCon=0.7
 )
-
+print("detector created", flush=True)
 # ======================================
 # PREDICT FUNCTION
 # ======================================
