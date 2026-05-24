@@ -1,35 +1,36 @@
-print("APP STARTING...")
+import sys
+print("APP STARTING...", flush=True)
 from flask import Flask, request, jsonify
-print("Flask imported")
+print("Flask imported", flush=True)
 from flask_cors import CORS
-print("CORS imported")
+print("CORS imported", flush=True)
 import os
 import base64
 import cv2
 import numpy as np
-print("Basic imports imported")
+print("Basic imports imported", flush=True)
 
 # ======================================
 # IMPORT PREDICTION FUNCTIONS
 # ======================================
-print("Importing predict...")
+print("Importing predict...", flush=True)
 from predict import predict_static
-print("predict imported")
+print("predict imported", flush=True)
 
 print("Importing motion...")
 from predict_motion import predict_builder
-print("motion imported")
+print("motion imported", flush=True)
 
-print("Importing word...")
+print("Importing word...", flush=True)
 from predict_word import predict_word
-print("word imported")
+print("word imported", flush=True)
 
-print("Importing builder...")
+print("Importing builder...", flush=True)
 from work_builder import (
     predict_gesture,
     select_suggestion
 )
-print("builder imported")
+print("builder imported", flush=True)
 # ======================================
 # FLASK APP
 # ======================================
