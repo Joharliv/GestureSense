@@ -249,7 +249,7 @@ async function sendFrame(){
         const response =
             await fetch(
 
-                `https://gesturesense-p6qu.onrender.com/predict/${currentMode}`,
+                `http://127.0.0.1:5000/predict/${currentMode}`,
 
                 {
 
