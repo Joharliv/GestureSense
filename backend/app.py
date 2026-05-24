@@ -1,27 +1,35 @@
+print("APP STARTING...")
 from flask import Flask, request, jsonify
-
+print("Flask imported")
 from flask_cors import CORS
+print("CORS imported")
 import os
 import base64
 import cv2
 import numpy as np
-
+print("Basic imports imported")
 
 # ======================================
 # IMPORT PREDICTION FUNCTIONS
 # ======================================
-
+print("Importing predict...")
 from predict import predict_static
+print("predict imported")
 
+print("Importing motion...")
 from predict_motion import predict_builder
+print("motion imported")
 
+print("Importing word...")
 from predict_word import predict_word
+print("word imported")
 
+print("Importing builder...")
 from work_builder import (
     predict_gesture,
     select_suggestion
 )
-
+print("builder imported")
 # ======================================
 # FLASK APP
 # ======================================
