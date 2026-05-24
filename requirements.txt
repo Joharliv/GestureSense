@@ -2,6 +2,6 @@ flask
 flask-cors
 opencv-python
 numpy
-pandas
 mediapipe
+pandas
 cvzone
