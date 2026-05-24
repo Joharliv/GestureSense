@@ -5,3 +5,4 @@ numpy
 mediapipe
 pandas
 cvzone
+scikit-learn
