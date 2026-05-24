@@ -7,3 +7,4 @@ mediapipe==0.10.9
 pandas
 cvzone==1.6.1
 scikit-learn==1.7.2
+tensorflow==2.15.0
