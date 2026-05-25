@@ -250,7 +250,7 @@ async function sendFrame(){
             );
 
         const response = await fetch(
-          `${API_BASE}/predict/${currentMode}`,
+          `http://127.0.0.1:5000/predict/${currentMode}`,
 
           {
             method: "POST",

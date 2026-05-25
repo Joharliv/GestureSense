@@ -54,10 +54,17 @@ def decode_image(image_data):
 # MOTION / LETTER / WORD / BUILDER
 # ======================================
 
-@app.route("/predict/motion", methods=["POST"])
+@app.route("/predict/motion", methods=["POST", "OPTIONS"])
 def motion():
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
     try:
-        frame = decode_image(request.json["image"])
+        data = request.get_json(silent=True)
+
+        if not data or "image" not in data:
+            return jsonify({"prediction": "Invalid Request"}), 400
+
+        frame = decode_image(data["image"])
 
         if frame is None:
             return jsonify({"prediction": "No Hand"})
@@ -71,10 +78,17 @@ def motion():
         return jsonify({"prediction": "Error"})
 
 
-@app.route("/predict/word", methods=["POST"])
+@app.route("/predict/word", methods=["POST", "OPTIONS"])
 def word():
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
     try:
-        frame = decode_image(request.json["image"])
+        data = request.get_json(silent=True)
+
+        if not data or "image" not in data:
+            return jsonify({"prediction": "Invalid Request"}), 400
+
+        frame = decode_image(data["image"])
 
         if frame is None:
             return jsonify({"prediction": "No Hand"})
@@ -90,8 +104,16 @@ def word():
 
 @app.route("/predict/builder", methods=["POST", "OPTIONS"])
 def builder():
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+     
     try:
-        frame = decode_image(request.json["image"])
+        data = request.get_json(silent=True)
+
+        if not data or "image" not in data:
+            return jsonify({"prediction": "Invalid Request"}), 400
+
+        frame = decode_image(data["image"])
 
         if frame is None:
             return jsonify({
