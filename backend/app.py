@@ -67,28 +67,54 @@ def motion():
         return jsonify({"prediction": "Error"})
 
 
-@app.route("/predict/word", methods=["POST", "OPTIONS"])
-def word():
+@app.route("/predict/builder", methods=["POST", "OPTIONS"])
+def builder():
+
+    print("BUILDER ROUTE HIT", flush=True)
+
     if request.method == "OPTIONS":
         return jsonify({}), 200
+
     try:
+
         data = request.get_json(silent=True)
 
+        print("DATA RECEIVED:", data is not None, flush=True)
+
         if not data or "image" not in data:
-            return jsonify({"prediction": "Invalid Request"}), 400
+            print("NO IMAGE", flush=True)
+
+            return jsonify({
+                "prediction": "Invalid Request"
+            }), 400
 
         frame = decode_image(data["image"])
 
+        print("FRAME DECODED:", frame is not None, flush=True)
+
         if frame is None:
-            return jsonify({"prediction": "No Hand"})
 
-        pred = predict_word(frame)
+            return jsonify({
+                "prediction": "No Hand",
+                "suggestions": []
+            })
 
-        return jsonify({"prediction": str(pred)})
+        result = predict_gesture(frame)
+
+        print("RESULT:", result, flush=True)
+
+        return jsonify(result)
 
     except Exception as e:
-        print("Word Error:", e)
-        return jsonify({"prediction": "Error"})
+
+        import traceback
+
+        print(traceback.format_exc(), flush=True)
+
+        return jsonify({
+            "prediction": "Error",
+            "suggestions": []
+        })
 
 
 @app.route("/predict/builder", methods=["POST", "OPTIONS"])

@@ -281,7 +281,7 @@ def predict_gesture(frame):
 
 
     hands, img = detector.findHands(frame)
-
+    print("HANDS:", len(hands), flush=True)
 
     if hands:
 
@@ -346,7 +346,7 @@ def predict_gesture(frame):
             )[0]
 
 
-            if max(probs) > 0.90:
+            if max(probs) > 0.65:
 
                 letter_prediction = \
                     motion_model.predict(
@@ -434,7 +434,7 @@ def predict_gesture(frame):
             word_conf = max(probs)
 
 
-            if word_conf > 0.85:
+            if word_conf > 0.60:
 
                 pred_word = \
                     word_le.inverse_transform(
