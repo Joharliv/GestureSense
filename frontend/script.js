@@ -33,6 +33,9 @@ const deleteWordBtn =
 const clearSentenceBtn =
     document.getElementById("clearSentenceBtn");
 
+const API_BASE =
+    "https://gesturesense-zf4a.onrender.com";
+
 
 // ======================================
 // CREATE SPACE BUTTON
@@ -246,25 +249,21 @@ async function sendFrame(){
                 0.6
             );
 
-        const response =
-            await fetch(
+        const response = await fetch(
+          `${API_BASE}/predict/${currentMode}`,
 
-                `https://gesturesense-zf4a.onrender.com/predict/${currentMode}`,
+          {
+            method: "POST",
 
-                {
+            headers: {
+              "Content-Type": "application/json",
+            },
 
-                    method:"POST",
-
-                    headers:{
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body:JSON.stringify({
-                        image:image
-                    })
-                }
-            );
+            body: JSON.stringify({
+              image: image,
+            }),
+          },
+        );
 
         const data =
             await response.json();
