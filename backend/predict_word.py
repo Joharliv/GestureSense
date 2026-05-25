@@ -1,13 +1,9 @@
 import os
-
 import cv2
 import numpy as np
 import pickle
-
+import tensorflow as tf
 from collections import deque, Counter
-
-from tensorflow.keras.models import load_model
-
 from cvzone.HandTrackingModule import HandDetector
 
 
@@ -15,24 +11,16 @@ from cvzone.HandTrackingModule import HandDetector
 # LOAD MODEL
 # ======================================
 
-BASE_DIR = os.path.dirname(
-    os.path.abspath(__file__)
-)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join(
-    BASE_DIR,
-    "gesture_lstm.h5"
-)
+model_path = os.path.join(BASE_DIR, "gesture_lstm.h5")
 
-model = load_model(model_path)
+model = tf.keras.models.load_model(model_path)
 
-label_path = os.path.join(
-    BASE_DIR,
-    "label_encoder.pkl"
-)
+
+label_path = os.path.join(BASE_DIR, "label_encoder.pkl")
 
 with open(label_path, "rb") as f:
-
     le = pickle.load(f)
 
 
