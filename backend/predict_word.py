@@ -48,9 +48,10 @@ def load_resources():
 # =========================
 def predict_word(frame):
 
-    global sequence, predictions, prev_data
-
-    load_resources()
+    global sequence
+    global predictions
+    global prev_data
+    global current_word
 
     hands, img = detector.findHands(frame)
 
@@ -58,9 +59,11 @@ def predict_word(frame):
         return "No Hand"
 
     lmList = hands[0]["lmList"]
+
     wrist_x, wrist_y, wrist_z = lmList[0]
 
     data = []
+
     for lm in lmList:
         x = lm[0] - wrist_x
         y = lm[1] - wrist_y
@@ -68,34 +71,27 @@ def predict_word(frame):
         data.extend([x, y, z])
 
     max_val = max([abs(v) for v in data])
+
     if max_val != 0:
         data = [v / max_val for v in data]
 
-    if prev_data is not None:
-        velocity = [c - p for c, p in zip(data, prev_data)]
-    else:
-        velocity = [0] * len(data)
+    sequence.append(data)
 
-    prev_data = data
-
-    combined = data + velocity
-    sequence.append(combined)
-
-    if len(sequence) > 30:
+    if len(sequence) > frames_to_capture:
         sequence.pop(0)
 
-    if len(sequence) < 30:
+    if len(sequence) < frames_to_capture:
         return "..."
 
     input_data = np.array(sequence).reshape(1, 30, -1)
 
     probs = model.predict(input_data, verbose=0)[0]
+
     confidence = max(probs)
 
-    if confidence > 0.6:
-        pred = le.inverse_transform([np.argmax(probs)])[0]
-        predictions.append(pred)
+    if confidence < 0.6:
+        return "..."
 
-        return Counter(predictions).most_common(1)[0][0]
+    pred = le.inverse_transform([np.argmax(probs)])[0]
 
-    return "..."
+    return str(pred)

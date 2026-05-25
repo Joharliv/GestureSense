@@ -269,9 +269,7 @@ async function sendFrame(){
         const data =
             await response.json();
 
-        const pred =
-            (data.prediction || "")
-            .trim();
+        const pred = (data.prediction ?? data ?? "").toString().trim();
 
         predictionText.innerText =
             pred || "...";

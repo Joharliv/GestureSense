@@ -43,8 +43,8 @@ def load_resources():
 def predict_builder(frame):
 
     global sequence
-
-    load_resources()
+    global stable_prediction
+    global final_prediction
 
     hands, img = detector.findHands(frame)
 
@@ -57,37 +57,36 @@ def predict_builder(frame):
     wrist_x, wrist_y, wrist_z = lmList[0]
 
     data = []
+
     for lm in lmList:
         x = lm[0] - wrist_x
         y = lm[1] - wrist_y
         z = lm[2] - wrist_z
         data.extend([x, y, z])
 
-    max_value = max([abs(v) for v in data])
+    max_value = max([abs(val) for val in data])
+
     if max_value != 0:
-        data = [v / max_value for v in data]
+        data = [val / max_value for val in data]
 
     sequence.append(data)
 
-    if len(sequence) > 30:
+    if len(sequence) > frames_to_capture:
         sequence.pop(0)
 
-    if len(sequence) < 30:
+    if len(sequence) < frames_to_capture:
         return "..."
 
     flattened = []
     for f in sequence:
         flattened.extend(f)
 
-    # simple prediction (kept same logic)
-    import pandas as pd
-
     input_df = pd.DataFrame([flattened], columns=motion_columns)
 
     probs = motion_model.predict_proba(input_df)[0]
-    max_prob = max(probs)
+    motion_pred = motion_model.predict(input_df)[0]
 
-    if max_prob > 0.9:
-        return motion_model.predict(input_df)[0]
+    if max(probs) < 0.8:
+        return "..."
 
-    return ""
+    return str(motion_pred)
